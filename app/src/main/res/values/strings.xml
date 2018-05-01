@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">SampleTask</string>
     <string name="pleasewait">Please Wait</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="assets_font_regular" translatable="false">ArimaMadurai-Regular.ttf</string>
+    <string name="assets_font_bold" translatable="false">ArimaMadurai-Bold.ttf</string>
+    <string name="toolbar_title">Menu</string>
+    <string name="last_updated_time">Last Updated Time</string>
+
+
+
 </resources>

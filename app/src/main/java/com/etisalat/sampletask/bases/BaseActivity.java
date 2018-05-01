@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 import com.etisalat.sampletask.R;
 
-public abstract class BaseActivity<T extends BasePresenter>
-        extends AppCompatActivity implements BasePresenterListener {
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity
+        implements BasePresenterListener {
     protected T presenter;
     private ProgressDialog progressDialog;
 
