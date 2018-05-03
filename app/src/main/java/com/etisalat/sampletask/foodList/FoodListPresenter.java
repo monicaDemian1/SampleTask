@@ -1,5 +1,8 @@
 package com.etisalat.sampletask.foodList;
 
+import android.content.Context;
+import android.net.http.HttpResponseCache;
+
 import com.etisalat.sampletask.bases.BasePresenter;
 import com.etisalat.sampletask.common.helper.RxBusEvent;
 import com.etisalat.sampletask.common.helper.ServiceHelper;
@@ -30,10 +33,10 @@ class FoodListPresenter extends BasePresenter<FoodListController, FoodListPresen
     }
 
 
-    void getFoodListItem() {
+    void getFoodListItem(Context context) {
         foodListPresenterListener.showProgress();
 
-        ServiceHelper.getInstance().getFoodMenuList(singleObserver);
+        ServiceHelper.getInstance(context).getFoodMenuList(singleObserver);
 
     }
 

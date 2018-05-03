@@ -9,10 +9,9 @@
     <!-- TODO: Update blank fragment layout -->
     <ImageView
         android:id="@+id/cameraImageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="@dimen/imageWidth"
+        android:layout_height="@dimen/imageHeight"
         android:scaleType="centerCrop"
-        android:src="@drawable/android_oreo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

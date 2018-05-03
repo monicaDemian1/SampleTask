@@ -11,16 +11,16 @@ import org.simpleframework.xml.Root;
 public class FoodListItem {
 
     @Element(name = "id")
-    String id;
+    private String id;
 
     @Element(name = "name")
-    String name;
+    private String name;
 
     @Element(name = "cost")
-    String cost;
+    private String cost;
 
     @Element(name = "description")
-    String description;
+    private String description;
 
     public String getId() {
         return id;

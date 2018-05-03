@@ -83,6 +83,13 @@ public class FoodListActivity extends BaseActivity<FoodListPresenter> implements
     }
 
     @Override
+    public void initializeView() {
+
+        toolbar = findViewById(R.id.toolbar);
+        lastUpdateTimeTextView = findViewById(R.id.txtLastUpdateTime);
+    }
+
+    @Override
     public void onSuccess(ArrayList<FoodListItem> foodListItems) {
 
     }
@@ -118,10 +125,5 @@ public class FoodListActivity extends BaseActivity<FoodListPresenter> implements
 
     }
 
-    @Override
-    public void initializeView() {
 
-        toolbar = findViewById(R.id.toolbar);
-        lastUpdateTimeTextView = findViewById(R.id.txtLastUpdateTime);
-    }
 }

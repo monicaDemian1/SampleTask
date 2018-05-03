@@ -3,10 +3,9 @@ package com.etisalat.sampletask.camera
 
 import android.Manifest
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
-import android.net.Uri
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v4.app.Fragment
@@ -14,10 +13,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-
 import com.etisalat.sampletask.R
 import com.etisalat.sampletask.common.helper.Constants
-import com.etisalat.sampletask.foodList.FoodListFragment
 import com.etisalat.sampletask.permission.PermissionHandlerFragment
 import com.etisalat.sampletask.permission.PermissionListener
 
@@ -55,6 +52,13 @@ class CameraFragment : PermissionHandlerFragment(), CameraPresenterListener, Per
     override fun initializeView(v: View) {
 
         cameraImageView = v.findViewById(R.id.cameraImageView)
+        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.android_oreo)
+        val img: Bitmap? = BitmapFactory.decodeResource(resources, R.drawable.android_oreo)
+        if (img != null) {
+            cameraImageView!!.setImageBitmap(bitmap)
+
+
+        }
     }
 
     override fun setListeners() {
@@ -67,6 +71,7 @@ class CameraFragment : PermissionHandlerFragment(), CameraPresenterListener, Per
         if (resultCode == Activity.RESULT_OK && requestCode == Constants.REQUEST_CAMERA) {
 
             val photo = data!!.extras!!.get("data") as Bitmap
+            // val decodedImage
             cameraImageView!!.setImageBitmap(photo)
 
         }

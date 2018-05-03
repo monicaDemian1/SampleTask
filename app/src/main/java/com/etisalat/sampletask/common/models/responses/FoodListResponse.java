@@ -22,8 +22,6 @@ public class FoodListResponse {
         return foodListItems;
     }
 
-    public void setFoodListItems(ArrayList<FoodListItem> foodListItems) {
-        this.foodListItems = foodListItems;
-    }
+
 
 }

@@ -1,13 +1,9 @@
 package com.etisalat.sampletask.camera
 
 import android.os.Bundle
-import android.support.v4.app.FragmentTransaction
 import android.view.View
-
 import com.etisalat.sampletask.R
 import com.etisalat.sampletask.bases.BaseActivity
-import com.etisalat.sampletask.bases.BasePresenterListener
-import com.etisalat.sampletask.foodList.FoodListFragment
 
 class CameraActivity : BaseActivity<CameraPresenter>(), CameraPresenterListener {
 

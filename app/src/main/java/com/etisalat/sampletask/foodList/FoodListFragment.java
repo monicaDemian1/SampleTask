@@ -17,6 +17,7 @@ import com.etisalat.sampletask.R;
 import com.etisalat.sampletask.bases.BaseFragment;
 import com.etisalat.sampletask.common.helper.Constants;
 import com.etisalat.sampletask.common.helper.RxBusEvent;
+import com.etisalat.sampletask.common.helper.ServiceHelper;
 import com.etisalat.sampletask.common.helper.Utils;
 import com.etisalat.sampletask.common.models.FoodListItem;
 import com.etisalat.sampletask.foodList.adapter.FoodListRecyclerViewAdapter;
@@ -65,7 +66,7 @@ public class FoodListFragment extends BaseFragment<FoodListPresenter> implements
         context = getActivity();
         swipeContainer.setColorSchemeColors(ContextCompat.getColor(context, R.color.secondaryColor));
         foodListPresenter = setupPresenter();
-        foodListPresenter.getFoodListItem();
+        foodListPresenter.getFoodListItem(context);
 
 
     }
@@ -99,7 +100,7 @@ public class FoodListFragment extends BaseFragment<FoodListPresenter> implements
             foodListItemArrayList.clear();
             recyclerViewFoodList.getRecycledViewPool().clear();
             foodListRecyclerViewAdapter.notifyDataSetChanged();
-            foodListPresenter.getFoodListItem();
+            foodListPresenter.getFoodListItem(context);
             HashMap<Integer, String> hashMap = new HashMap<>();
             hashMap.put(Constants.publishLastRefreshDate, Utils.getLastRefreshTime());
             RxBusEvent.getInstance().setRxBusEvent(hashMap);
@@ -145,7 +146,7 @@ public class FoodListFragment extends BaseFragment<FoodListPresenter> implements
     @Override
     public void setFoodRecyclerViewAdapter() {
         foodListItemArrayList = new ArrayList<>();
-        foodListRecyclerViewAdapter = new FoodListRecyclerViewAdapter(context, foodListItemArrayList);
+        foodListRecyclerViewAdapter = new FoodListRecyclerViewAdapter(foodListItemArrayList);
         linearLayoutManager = new LinearLayoutManager(context);
         recyclerViewFoodList.setLayoutManager(linearLayoutManager);
         recyclerViewFoodList.setAdapter(foodListRecyclerViewAdapter);

@@ -1,8 +1,6 @@
 package com.etisalat.sampletask.foodList.adapter;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.v4.text.TextUtilsCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,10 +21,8 @@ public class FoodListRecyclerViewAdapter extends RecyclerView.Adapter<FoodListRe
 
 
     private ArrayList<FoodListItem> foodListItemsArrayList;
-    private Context context;
 
-    public FoodListRecyclerViewAdapter(Context context, ArrayList<FoodListItem> foodListItemsArrayList) {
-        this.context = context;
+    public FoodListRecyclerViewAdapter(ArrayList<FoodListItem> foodListItemsArrayList) {
         this.foodListItemsArrayList = foodListItemsArrayList;
     }
 
@@ -59,7 +55,7 @@ public class FoodListRecyclerViewAdapter extends RecyclerView.Adapter<FoodListRe
         private TextView foodDescription;
         private TextView foodPrice;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
             foodTitle = itemView.findViewById(R.id.foodTitle);
             foodDescription = itemView.findViewById(R.id.foodDescription);
