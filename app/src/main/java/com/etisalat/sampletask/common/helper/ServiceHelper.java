@@ -5,17 +5,13 @@ import android.content.Context;
 import com.etisalat.sampletask.common.models.responses.FoodListResponse;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.Cache;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
@@ -71,8 +67,6 @@ public class ServiceHelper {
     private void createCacheForOkHTTP() {
         cache = new Cache(context.getCacheDir(), DISK_CACHE_SIZE);
     }
-
-
 
 
     public void getFoodMenuList(SingleObserver<FoodListResponse> foodListResponseSingleObserver) {

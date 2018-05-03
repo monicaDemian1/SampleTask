@@ -15,6 +15,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import com.etisalat.sampletask.R
 import com.etisalat.sampletask.common.helper.Constants
+import com.etisalat.sampletask.common.helper.Utils
 import com.etisalat.sampletask.permission.PermissionHandlerFragment
 import com.etisalat.sampletask.permission.PermissionListener
 
@@ -53,7 +54,7 @@ class CameraFragment : PermissionHandlerFragment(), CameraPresenterListener, Per
 
         cameraImageView = v.findViewById(R.id.cameraImageView)
         val bitmap = BitmapFactory.decodeResource(resources, R.drawable.android_oreo)
-        val img: Bitmap? = BitmapFactory.decodeResource(resources, R.drawable.android_oreo)
+        val img: Bitmap? = Utils.decodeSampledBitmapFromResource(resources, R.drawable.android_oreo, 250, 350)
         if (img != null) {
             cameraImageView!!.setImageBitmap(bitmap)
 
@@ -71,8 +72,8 @@ class CameraFragment : PermissionHandlerFragment(), CameraPresenterListener, Per
         if (resultCode == Activity.RESULT_OK && requestCode == Constants.REQUEST_CAMERA) {
 
             val photo = data!!.extras!!.get("data") as Bitmap
-            // val decodedImage
-            cameraImageView!!.setImageBitmap(photo)
+            val resizedBitMap = Bitmap.createScaledBitmap(photo, 250, 350, false)
+            cameraImageView!!.setImageBitmap(resizedBitMap)
 
         }
     }
