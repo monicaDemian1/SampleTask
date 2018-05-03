@@ -17,7 +17,6 @@ import com.etisalat.sampletask.R;
 import com.etisalat.sampletask.bases.BaseFragment;
 import com.etisalat.sampletask.common.helper.Constants;
 import com.etisalat.sampletask.common.helper.RxBusEvent;
-import com.etisalat.sampletask.common.helper.ServiceHelper;
 import com.etisalat.sampletask.common.helper.Utils;
 import com.etisalat.sampletask.common.models.FoodListItem;
 import com.etisalat.sampletask.foodList.adapter.FoodListRecyclerViewAdapter;
